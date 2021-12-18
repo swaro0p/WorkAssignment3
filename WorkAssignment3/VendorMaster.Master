@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VendorMaster.master.cs" Inherits="WorkAssignment3.VendorMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <header>
+    <div>
+        <nav>
+            <p> 
+                <a href="#">Home</a> 
+                <a href="#">Vendor</a> 
+                <a href="#">Assect List</a>                           
+                <a href="#">New Assect</a>                           
+                <a href="#">Report</a>                           
+            </p>
+        </nav>
+    </div>
+       </header>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer>
+        All Rights Reserved <%= DateTime.Now.Year.ToString() %>
+
+    </footer>
+</body>
+</html>
