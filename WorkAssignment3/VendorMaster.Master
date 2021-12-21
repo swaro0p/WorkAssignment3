@@ -7,21 +7,20 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <header>
-    <div>
-        <nav>
-            <p> 
-                <a href="#">Home</a> 
-                <a href="#">Vendor</a> 
-                <a href="#">Assect List</a>                           
-                <a href="#">New Assect</a>                           
-                <a href="#">Report</a>                           
-            </p>
-        </nav>
-    </div>
-       </header>
+    <header>
+        <div>
+            <nav class="navbar">
+                <a href="Home.aspx">Home</a>
+                <a href="Vendor.aspx">Vendor</a>
+                <a href="AssetList.aspx">Assect List</a>
+                <a href="NewAsset.aspx">New Assect</a>
+                <a href="Report.aspx">Report</a>
+            </nav>
+        </div>
+    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -29,8 +28,9 @@
         </div>
     </form>
     <footer>
-        All Rights Reserved <%= DateTime.Now.Year.ToString() %>
-
+        <div>
+            All Rights Reserved <%= DateTime.Now.Year.ToString() %>
+        </div>
     </footer>
 </body>
 </html>
