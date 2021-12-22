@@ -1,6 +1,13 @@
 ﻿body {
 }
 
+*{
+    font-family:'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+}
+
 .navbar {
     background-color: #333;
     overflow: hidden;
@@ -27,3 +34,15 @@
             background-color: #04AA6D;
             color: white;
         }
+
+.footer {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 50px;
+}
+
+.footer-p{
+    position:center;
+}

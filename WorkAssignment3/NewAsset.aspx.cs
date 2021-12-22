@@ -27,16 +27,16 @@ namespace WorkAssignment3
 
                     DropDownListVendorName.DataSource = dataSet;
 
-                    DropDownListVendorName.DataBind();
+                   // DropDownListVendorName.DataBind();
                     DropDownListVendorName.DataTextField = "VendorName";
-                    DropDownListVendorName.DataValueField = "VendorId";
+                    //DropDownListVendorName.DataValueField = "VendorId";
+                    DropDownListVendorName.DataValueField = "VendorName";
                     DropDownListVendorName.DataBind();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-               // throw;
+                Response.Write(ex);
             }
         }
         void InsertAsset()
@@ -54,15 +54,13 @@ namespace WorkAssignment3
             }
             catch (Exception e)
             {
-
-                // throw;
                 Response.Write("Error:" + e);
-
             }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             DropDownData();
+            TextBoxDate_CalendarExtender.EndDate = DateTime.Now;
         }
 
         protected void ButtonAdd_Click(object sender, EventArgs e)

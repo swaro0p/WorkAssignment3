@@ -27,9 +27,9 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer>
+    <footer class="footer">
         <div>
-            All Rights Reserved <%= DateTime.Now.Year.ToString() %>
+           <p class="footer-p"> All Rights Reserved <%= DateTime.Now.Year.ToString() %> </p>
         </div>
     </footer>
 </body>

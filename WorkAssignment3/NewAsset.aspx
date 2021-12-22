@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td><asp:Label ID="LabelPurchaseDate" runat="server" Text="Purchase Date"></asp:Label>  </td> 
-                <td> <asp:TextBox ID="TextBoxDate" runat="server"></asp:TextBox> 
+                <td> <asp:TextBox ID="TextBoxDate" runat="server" AutoCompleteType="Disabled"></asp:TextBox> 
                     <ajaxToolkit:CalendarExtender ID="TextBoxDate_CalendarExtender" runat="server" BehaviorID="TextBoxDate_CalendarExtender" TargetControlID="TextBoxDate">
                     </ajaxToolkit:CalendarExtender>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorPurchaseDate" runat="server" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ControlToValidate="TextBoxDate">*</asp:RequiredFieldValidator>

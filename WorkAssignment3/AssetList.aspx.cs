@@ -23,11 +23,8 @@ namespace WorkAssignment3
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from Asset",con);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
-
                     GridViewAssetList.DataSource = dataSet;
-                   // GridViewAssetList.AutoGenerateColumns = true;
-                    GridViewAssetList.DataBind();
-                    
+                    GridViewAssetList.DataBind();                    
                 }
             }
             catch (Exception e)
@@ -36,66 +33,36 @@ namespace WorkAssignment3
             }
         }
 
-        void SearchAsset()
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            AssetListGridView();
+        }
+
+
+        protected void TextBoxVendorSearch_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "select AssetId,AssetName,VendorName,Cost from Asset where AssetName like '%' + @AssetName + '%'";
-                    // SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select AssetId,AssetName,VendorName,Cost from Asset where AssetName like'%' '"+TextBoxVendorSearch.Text+ "%'", con);
-                    cmd.Connection = con;
-                    cmd.Parameters.AddWithValue("@AssetName", TextBoxVendorSearch.Text.Trim());
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select AssetId,AssetName,VendorName,Cost from Asset where AssetName like '" + TextBoxVendorSearch.Text + "%'", con);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
-
                     GridViewAssetList.DataSource = dataSet;
-                    // GridViewAssetList.AutoGenerateColumns = true;
-                    
-                    GridViewAssetList.DataBind();
+                    GridViewAssetList.DataBind();                  
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-               Response.Write(e);
-            }
+                Response.Write(ex);            }
+              
         }
 
-        void linkDelete_Click(object sender, EventArgs e)
+        protected void GridViewAssetList_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            AssetListGridView();
-
-            
-        }
-
-        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridViewAssetList.PageIndex = e.NewPageIndex;
-            this.SearchAsset();
-        }
-        protected void ButtonVendorSearch_Click(object sender, EventArgs e)
-        {
-            this.SearchAsset();
-        }
-
-        protected void TextBoxVendorSearch_TextChanged(object sender, EventArgs e)
-        {
-
-           /* if (!this.IsPostBack)
-            {
-                if (TextBoxVendorSearch.Text.Length == 0)
-                {
-                    this.AssetListGridView();
-                }
-            }*/
+           
         }
     }
 }

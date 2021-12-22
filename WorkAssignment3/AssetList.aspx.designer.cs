@@ -42,15 +42,6 @@ namespace WorkAssignment3
         protected global::System.Web.UI.WebControls.TextBox TextBoxVendorSearch;
 
         /// <summary>
-        /// ButtonVendorSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonVendorSearch;
-
-        /// <summary>
         /// GridViewAssetList control.
         /// </summary>
         /// <remarks>

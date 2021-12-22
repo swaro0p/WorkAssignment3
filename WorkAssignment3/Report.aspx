@@ -6,4 +6,9 @@
     <div>
         <asp:GridView ID="GridViewReport" runat="server"></asp:GridView>
     </div>
+    <div>
+       <asp:Label ID="LabelTotalCost" runat="server" Text="Total Cost:"></asp:Label>
+       <asp:Label ID="LabelSum" runat="server" Text="Sum:"></asp:Label>
+        
+    </div>
 </asp:Content>
