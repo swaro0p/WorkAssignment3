@@ -20,15 +20,14 @@ namespace WorkAssignment3
             {
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-
-                    con.Open();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select VendorId,VendorName,VendorEmail,Contact from Vendor", con);
-                    DataSet dataSet = new DataSet();
-                    sqlDataAdapter.Fill(dataSet);
-
-                    GridViewVendor.DataSource = dataSet;
-
-                    GridViewVendor.DataBind();
+                   con.Open();
+                    SqlCommand command = new SqlCommand("select v.VendorId , v.VendorName,v.VendorEmail,v.Contact,c.CityName  from Vendor as v ,City as c where v.CityId=c.CityId", con);
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.HasRows == true)
+                    {
+                        GridViewVendor.DataSource = dataReader;
+                        GridViewVendor.DataBind();
+                    }
                 }
             }
             catch (Exception e)
@@ -37,14 +36,24 @@ namespace WorkAssignment3
             }
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             PopulateVendorGridview();
-            /*  if (!Page.IsPostBack)
-              {
-                  PopulateVendorGridview();
-              }*/
+        }
+
+        void UpdateVendor()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex);
+            }
         }
 
         protected void GridViewVendor_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,11 +74,14 @@ namespace WorkAssignment3
                         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select CityName from City", con);
                         DataSet dataSet = new DataSet();
                         sqlDataAdapter.Fill(dataSet);
-                        con.Close();
-                        DropDownList1.DataSource = dataSet;
-                        DropDownList1.DataTextField = "CityName";
-                        DropDownList1.DataValueField = "CityName";
-                        DropDownList1.DataBind();
+
+                        for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                        {
+                            DropDownList1.Items.Add(dataSet.Tables[0].Rows[i][0].ToString());
+                        }
+                    
+                        string selectedCity = DataBinder.Eval(e.Row.DataItem, "CityName").ToString();
+                        DropDownList1.Items.FindByValue(selectedCity).Selected = true;
                     }
                 }
             }
@@ -82,6 +94,18 @@ namespace WorkAssignment3
         protected void ButtonUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridViewVendor_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridViewVendor.EditIndex = -1;
+            PopulateVendorGridview();
+        }
+
+        protected void GridViewVendor_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewVendor.EditIndex = e.NewEditIndex;
+            PopulateVendorGridview();
         }
     }
 }

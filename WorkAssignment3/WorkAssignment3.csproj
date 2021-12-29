@@ -76,12 +76,13 @@
       <DependentUpon>AssectRegister.mdf</DependentUpon>
     </Content>
     <Content Include="AssetList.aspx" />
-    <Content Include="EditAsset.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="NewAsset.aspx" />
+    <Content Include="pexels-pixabay-39284.jpg" />
     <Content Include="Report.aspx" />
     <Content Include="Style.css" />
     <Content Include="Vendor.aspx" />
+    <Content Include="VendorPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,13 +92,6 @@
     </Compile>
     <Compile Include="AssetList.aspx.designer.cs">
       <DependentUpon>AssetList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditAsset.aspx.cs">
-      <DependentUpon>EditAsset.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditAsset.aspx.designer.cs">
-      <DependentUpon>EditAsset.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -134,6 +128,13 @@
     </Compile>
     <Compile Include="VendorMaster.Master.designer.cs">
       <DependentUpon>VendorMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VendorPage.aspx.cs">
+      <DependentUpon>VendorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VendorPage.aspx.designer.cs">
+      <DependentUpon>VendorPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

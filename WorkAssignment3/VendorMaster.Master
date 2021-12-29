@@ -14,7 +14,7 @@
         <div>
             <nav class="navbar">
                 <a href="Home.aspx">Home</a>
-                <a href="Vendor.aspx">Vendor</a>
+                <a href="VendorPage.aspx">Vendor</a>
                 <a href="AssetList.aspx">Assect List</a>
                 <a href="NewAsset.aspx">New Assect</a>
                 <a href="Report.aspx">Report</a>

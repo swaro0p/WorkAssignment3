@@ -9,19 +9,19 @@
         <asp:Label ID="LabelVendor" runat="server" Text="Vendor"></asp:Label>
          </h1>
     </div>
-    <asp:GridView ID="GridViewVendor" runat="server" OnSelectedIndexChanged="GridViewVendor_SelectedIndexChanged" AutoGenerateColumns="False" OnRowDataBound="GridViewVendor_RowDataBound">
+    <asp:GridView ID="GridViewVendor" runat="server" OnSelectedIndexChanged="GridViewVendor_SelectedIndexChanged" AutoGenerateColumns="False" OnRowDataBound="GridViewVendor_RowDataBound" OnRowCancelingEdit="GridViewVendor_RowCancelingEdit" OnRowEditing="GridViewVendor_RowEditing">
         <Columns>  
                 <asp:BoundField DataField="VendorID" HeaderText="Vendor Id" />
                 <asp:BoundField DataField="VendorName" HeaderText="Vendor Name" />
                 <asp:BoundField DataField="VendorEmail" HeaderText="Vendor Email" />
                 <asp:BoundField DataField="Contact" HeaderText="Contact" />
-                                 
+                                                
             <asp:TemplateField HeaderText="City">
             <ItemTemplate>  
                         <asp:DropDownList ID="DropDownList1" runat="server">  
                         </asp:DropDownList>  
                     </ItemTemplate>  
-                </asp:TemplateField>    
+                </asp:TemplateField> 
                   </Columns>
     </asp:GridView>
     <div>

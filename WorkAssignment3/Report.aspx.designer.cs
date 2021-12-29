@@ -15,6 +15,24 @@ namespace WorkAssignment3
     {
 
         /// <summary>
+        /// LabelSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSearch;
+
+        /// <summary>
+        /// TextBoxReportSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxReportSearch;
+
+        /// <summary>
         /// GridViewReport control.
         /// </summary>
         /// <remarks>
@@ -40,5 +58,14 @@ namespace WorkAssignment3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelSum;
+
+        /// <summary>
+        /// LabelRowCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRowCount;
     }
 }
