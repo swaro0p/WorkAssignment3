@@ -8,7 +8,7 @@
         <asp:TextBox ID="TextBoxReportSearch" runat="server" AutoPostBack="True" OnTextChanged="TextBoxReportSearch_TextChanged"></asp:TextBox>
     </div>
     <div>
-        <asp:GridView ID="GridViewReport" runat="server" EmptyDataText="No Items Inserted" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+        <asp:GridView ID="GridViewReport" runat="server" ShowHeaderWhenEmpty="true" EmptyDataText="No Items Inserted" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
             <Columns>
                 <asp:BoundField DataField="AssetID" HeaderText="Asset Id" SortExpression="AssetID" />
                 <asp:BoundField DataField="AssetName" HeaderText="Asset Name" SortExpression="AssetName" />

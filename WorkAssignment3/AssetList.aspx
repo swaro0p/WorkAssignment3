@@ -12,7 +12,7 @@
         <asp:TextBox ID="TextBoxVendorSearch" runat="server" OnTextChanged="TextBoxVendorSearch_TextChanged" AutoPostBack="True"></asp:TextBox>
     </div>
     <div>
-        <asp:GridView ID="GridViewAssetList" runat="server" DataKeyNames="AssetId" AutoGenerateColumns="False" CellPadding="4" ForeColor="Black" OnSelectedIndexChanging="GridViewAssetList_SelectedIndexChanging" OnRowDeleting="GridViewAssetList_RowDeleting" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2">
+        <asp:GridView ID="GridViewAssetList" runat="server" ShowHeaderWhenEmpty="true" EmptyDataText="Asset is empty" DataKeyNames="AssetId" AutoGenerateColumns="False" CellPadding="4" ForeColor="Black" OnSelectedIndexChanging="GridViewAssetList_SelectedIndexChanging" OnRowDeleting="GridViewAssetList_RowDeleting" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2">
             <Columns>
                 <asp:BoundField DataField="AssetID" HeaderText="Asset Id" />
                 <asp:BoundField DataField="AssetName" HeaderText="Asset" />

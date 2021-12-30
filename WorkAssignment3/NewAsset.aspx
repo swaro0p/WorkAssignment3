@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="tablediv">
         <table style="width: 100%;">
@@ -22,6 +23,7 @@
             <tr>
                 <td><asp:Label ID="LabelPurchaseDate" runat="server" Text="Purchase Date"></asp:Label>  </td> 
                 <td> <asp:TextBox ID="TextBoxDate" runat="server" AutoCompleteType="Disabled"></asp:TextBox> 
+                <td> <asp:TextBox ID="TextBoxDateDb" runat="server" AutoCompleteType="Disabled"></asp:TextBox> 
                     <ajaxToolkit:CalendarExtender ID="TextBoxDate_CalendarExtender" runat="server" BehaviorID="TextBoxDate_CalendarExtender" TargetControlID="TextBoxDate">
                     </ajaxToolkit:CalendarExtender>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorPurchaseDate" runat="server" ErrorMessage="Please Select A Purchase Date" ForeColor="Red" ControlToValidate="TextBoxDate">*Please Select A Purchase Date</asp:RequiredFieldValidator>

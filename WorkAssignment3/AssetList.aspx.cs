@@ -69,7 +69,7 @@ namespace WorkAssignment3
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select AssetID,AssetName,VendorName,Cost from Asset where AssetName like '" + TextBoxVendorSearch.Text + "%'", con);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select AssetID,AssetName,VendorName,Cost from Asset where AssetName like '" + TextBoxVendorSearch.Text + "%' OR VendorName like '" + TextBoxVendorSearch.Text + "%' ", con);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
                     GridViewAssetList.DataSource = dataSet;
