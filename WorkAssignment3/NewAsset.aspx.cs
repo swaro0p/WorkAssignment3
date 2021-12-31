@@ -47,7 +47,8 @@ namespace WorkAssignment3
                     var date = DateTime.ParseExact(dateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                     con.Open();
                     //SqlCommand command = new SqlCommand("insert into Asset values('"+TextBoxName.Text+"','"+DropDownListVendorName.Text+"','"+Convert.ToDateTime(TextBoxDate.Text)+"','"+Convert.ToDecimal(TextBoxCost.Text)+"')",con);
-                    SqlCommand command = new SqlCommand("insert into Asset values('" + TextBoxName.Text + "','" + DropDownListVendorName.Text + "','" + date.GetDateTimeFormats() + "','" + Convert.ToDecimal(TextBoxCost.Text) + "')", con); ; ;
+                   // SqlCommand command = new SqlCommand("insert into Asset values('" + TextBoxName.Text + "','" + DropDownListVendorName.Text + "','" + date.ToString() + "','" + Convert.ToDecimal(TextBoxCost.Text) + "')", con);
+                   // SqlCommand command = new SqlCommand("insert into Asset values('" + TextBoxName.Text + "','" + DropDownListVendorName.Text + "','" + TextBoxDate.+ "','" + Convert.ToDecimal(TextBoxCost.Text) + "')", con);
                         command.ExecuteNonQuery();
                         Response.Write("<script>alert('New Asset Added');</script>");
                 }
